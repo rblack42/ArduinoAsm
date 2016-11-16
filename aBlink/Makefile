@@ -9,6 +9,11 @@ INTTBL	= FALSE
 MCU	= atmega328p
 F_CPU	= 16000000
 
+# uncomment one of these linesand check for your system:
+PORT	= COM4
+#PORT	= /dev/ttyACM0
+#PORT	= /dev/cu.usbmodem1411
+
 # uncomment one of thes elines
 MAKE_BASE = ../
 #MAKE_BASE = /usr/local/

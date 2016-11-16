@@ -1,10 +1,13 @@
 OBJS	= $(CSRCS:.c=.o) $(ASRCS:.S=.o)
 
-GCC		= avr-gcc
-OBJCOPY	= avr-objcopy
-OBJDUMP	= avr-objdump
-RM		= del
-DUDE	= avrdude
+ARDUINO = "C:\Program Files (x86)"/Arduino/hardware
+TOOLS 	= $(ARDUINO)/tools/avr/bin
+
+GCC	= $(TOOLS)/avr-gcc.exe
+OBJCOPY	= $(TOOLS)/avr-objcopy.exe
+OBJDUMP	= $(TOOLS)/avr-objdump.exe
+RM	= del
+DUDE	= $(TOOLS)/avrdude.exe
 
 CFLAGS		= -mmcu=$(MCU)
 CFLAGS		+= -DF_CPU=$(F_CPU)L
@@ -21,8 +24,8 @@ LFLAGS		+= -p$(MCU) -carduino
 LFLAGS		+= -P$(PORT)
 LFLAGS		+= -b115200
 
-DUDECNF		= -C"C:\Program Files (x86)\Arduino\hardware\tools\avr\etc\avrdude.conf"
-INCLUDES	= -I"C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino"
-INCLUDES	+= -I"C:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\standard"
+DUDECNF		= -C$(ARDUINO)/tools/avr/etc/avrdude.conf
+INCLUDES	= -I$(ARDUINO)/arduino/avr/cores/arduino
+INCLUDES	+= -I$(ARDUINO)/arduino/avr/variants/standard
 
 all:	$(TARGET).hex
