@@ -1,10 +1,12 @@
 OBJS	= $(CSRCS:.c=.o) $(ASRCS:.S=.o)
 
-GCC	= avr-gcc 
-OBJCOPY	= avr-objcopy 
-OBJDUMP = avr-objdump
+ARDUINO	= /usr/share/arduino
+TOOLS	= $(ARDUINO)/hardware/tools/avr/bin
+GCC	= $(TOOLS)/avr-gcc 
+OBJCOPY	= $(TOOLS)/avr-objcopy 
+OBJDUMP = $(TOOLS)/avr-objdump
 RM      = rm -f 
-DUDE    = avrdude
+DUDE    = $(TOOLS)/avrdude
 
 CFLAGS      = -mmcu=$(MCU)
 CFLAGS      += -DF_CPU=$(F_CPU)L
@@ -22,7 +24,7 @@ LFLAGS		+= -P$(PORT)
 LFLAGS		+= -b115200
 
 
-BASEDIR		= /usr/share/arduino/hardware
+BASEDIR		= $(ARDUINO)/hardware
 INCLUDES	= -I"$(BASEDIR)/arduino/avr/variants/standard"
 INCLUDES	+= -I"$(BASEDIR)/tools/avr/avr/include/avr"
 DUDECNF     	= -C"$(BASEDIR)/tools/avrdude.conf"
