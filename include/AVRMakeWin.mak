@@ -1,6 +1,7 @@
 OBJS	= $(CSRCS:.c=.o) $(ASRCS:.S=.o)
 
-ARDUINO = "C:\Program Files (x86)"/Arduino/hardware
+ARDUINO = "C:/Arduino/hardware"
+#ARDUINO = "C:\Program Files (x86)"/Arduino/hardware
 TOOLS 	= $(ARDUINO)/tools/avr/bin
 
 GCC	= $(TOOLS)/avr-gcc.exe
@@ -26,6 +27,6 @@ LFLAGS		+= -b115200
 
 DUDECNF		= -C$(ARDUINO)/tools/avr/etc/avrdude.conf
 INCLUDES	= -I$(ARDUINO)/arduino/avr/cores/arduino
-INCLUDES	+= -I$(ARDUINO)/arduino/avr/variants/standard
+INCLUDES	+= -I$(ARDUINO)/arduino/variants/standard
 
 all:	$(TARGET).hex
