@@ -12,6 +12,9 @@
 %.o:    %.S
 	$(GCC) -c $(AFLAGS) $< -o $@
 
+%.asm:	%.elf
+	$(OBJDUMP) $< --disassemble > $@
+
 load:   $(TARGET).hex
 	$(DUDE) $(DUDECNF) $(LFLAGS) -Uflash:w:$(TARGET).hex:i
 
@@ -19,5 +22,5 @@ load:   $(TARGET).hex
 	$(OBJDUMP) -d $< > $@
 
 clean:
-	$(RM) *.o *.hex *.eep *.elf *.map *.lst
+	$(RM) $(TARGET).hex $(TARGET).elf *.o 
 

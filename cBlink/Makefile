@@ -6,11 +6,12 @@ CSRCS 	= $(wildcard *.c)
 INTTBL	= FALSE
 
 # board definition
-MCU	= atmega328p
+#MCU	= atmega328p
+MCU		= atmega2560
 F_CPU	= 16000000
 
 # uncomment one of these linesand check for your system:
-PORT	= COM4
+PORT	= COM3
 #PORT	= /dev/ttyACM0
 #PORT	= /dev/cu.usbmodem1411
 
