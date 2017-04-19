@@ -1,7 +1,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN         5
+#define LED_PIN         7
 #define LED_ON          (PORTB |= (1<<LED_PIN))
 #define LED_OFF         (PORTB &= ~(1<<LED_PIN))
 
