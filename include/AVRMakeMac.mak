@@ -20,7 +20,7 @@ AFLAGS		+= -DF_CPU=$(F_CPU)
 AFLAGS		+= $(INCLUDES)
 
 LFLAGS		= -v
-LFLAGS		= -D
+LFLAGS		+= -D
 LFLAGS		+= -p$(MCU) -c$(PGMR)
 LFLAGS		+= -P$(PORT)
 LFLAGS		+= -b115200

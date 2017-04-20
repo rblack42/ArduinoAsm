@@ -23,7 +23,7 @@ AFLAGS		+= $(INCLUDES)
 
 LFLAGS		= -v
 LFLAGS		+= -p$(MCU) -c$(PGMR)
-LFLAGS		= -D
+LFLAGS		+= -D
 LFLAGS		+= -p$(MCU) -c$(PGMR)
 LFLAGS		+= -P$(PORT)
 LFLAGS		+= -b115200 -D
