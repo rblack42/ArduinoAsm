@@ -10,17 +10,18 @@ RM      = rm -f
 DUDE    = $(TOOLS)/avrdude
 
 CFLAGS      = -mmcu=$(MCU)
-CFLAGS      += -DF_CPU=$(F_CPU)L
+CFLAGS      += -DF_CPU=$(F_CPU)
 CFLAGS      += $(INCUDES)
 CFLAGS      += -Os
 
 AFLAGS		= -mmcu=$(MCU)
 AFLAGS		+= -x assembler-with-cpp
-AFLAGS		+= -DF_CPU=$(F_CPU)L
+AFLAGS		+= -DF_CPU=$(F_CPU)
 AFLAGS		+= $(INCLUDES)
 
 LFLAGS		= -v
-LFLAGS		+= -p$(MCU) -carduino
+LFLAGS		= -D
+LFLAGS		+= -p$(MCU) -c$(PGMR)
 LFLAGS		+= -P$(PORT)
 LFLAGS		+= -b115200
 

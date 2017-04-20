@@ -4,5 +4,6 @@
 
 #define LED_PIN     7       // Mege board LED
 //#define LED_PIN     5     // UNO board LED
+
 #define LED_DIR     _DDRB
 #define LED_PORT    _PORTB

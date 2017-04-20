@@ -1,10 +1,24 @@
 # AVRMakefile.mak
 
-ASRCS	= $(wildcard *.S)
-AOBJS	= $(ASRCS:.S=.o)
-CSRCS	= $(wildcard *.c)
-COBJS	= $(CSRCS:.c=.o)
-OBJS	= $(AOBJS) $(COBJS)
+F_CPU   = 16000000L
+
+#Board specific setings
+ifeq ($(BOARD), UNO)
+    MCU     = atmega328p
+    PGMR    = arduino
+	BINC	= standard
+else
+    MCU     = atmega2560
+    PGMR    = wiring
+	BINC	= mega
+endif
+
+# build a list of all source files
+ASRCS   = $(wildcard *.S)
+CSRCS   = $(wildcard *.c)
+AOBJS   = $(ASRCS:.S=.o)
+COBJS   = $(CSRCS:.c=.o)
+OBJS    = $(AOBJS) $(COBJS)
 
 # detect the system we are using
 ifeq ($(OS),Windows_NT)

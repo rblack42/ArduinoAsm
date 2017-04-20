@@ -4,15 +4,14 @@ TARGET	= aBlink
 
 INTTBL	= FALSE
 
-# board definition
-#MCU	= atmega328p
-MCU		= atmega2560
-F_CPU	= 16000000
+# uncomment one of these lines and check for your system:
+BOARD   = UNO
+BOARD  = MEGA
 
 # uncomment one of these linesand check for your system:
-PORT	= COM3
+PORT	= COM12
 #PORT	= /dev/ttyACM0
-#PORT	= /dev/cu.usbmodem1411
+#PORT	= /dev/cu.usbmodem1421
 
 # uncomment one of these lines
 MAKE_BASE = ../
