@@ -1,5 +1,6 @@
 OBJS	= $(CSRCS:.c=.o) $(ASRCS:.S=.o)
 
+#ARDUINO = "C:/Arduino/hardware"
 ARDUINO = "C:\Program Files (x86)"/Arduino/hardware
 TOOLS 	= $(ARDUINO)/tools/avr/bin
 
@@ -25,8 +26,13 @@ LFLAGS		+= -P$(PORT)
 LFLAGS		+= -b115200 -D
 
 DUDECNF		= -C$(ARDUINO)/tools/avr/etc/avrdude.conf
+
+ifeq ($(MCU), atmega2560)
+	INCLUDES	+= -I$(ARDUINO)/arduino/avr/variants/mega
+else
+INCLUDES	+= -I$(ARDUINO)/arduino/variants/standard
+endif
 INCLUDES	= -I$(ARDUINO)/arduino/avr/cores/arduino
-INCLUDES	+= -I$(ARDUINO)/arduino/avr/variants/mega
 INCLUDES	+=	-I$(ARDUINO)/tools/avr/avr/include/avr
 
 all:	$(TARGET).hex $(TARGET).asm

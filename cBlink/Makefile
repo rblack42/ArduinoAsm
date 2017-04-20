@@ -2,7 +2,6 @@
 
 TARGET	= cBlink
 
-CSRCS 	= $(wildcard *.c)
 INTTBL	= FALSE
 
 # board definition

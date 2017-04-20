@@ -6,7 +6,7 @@
         .global         delay
 
 delay:
-        ldi         r16, 5              ; outer loop
+        ldi         r16, 5             ; outer loop
 1:
         ldi         r17, 200            ; middle loop
 2:      

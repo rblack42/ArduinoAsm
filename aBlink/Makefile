@@ -2,9 +2,6 @@
 
 TARGET	= aBlink
 
-ASRCS 	= $(wildcard *.S)
-OBJS	= $(ASRCS:.S=.o)
-
 INTTBL	= FALSE
 
 # board definition
@@ -17,7 +14,7 @@ PORT	= COM3
 #PORT	= /dev/ttyACM0
 #PORT	= /dev/cu.usbmodem1411
 
-# uncomment one of thes elines
+# uncomment one of these lines
 MAKE_BASE = ../
 #MAKE_BASE = /usr/local/
 

@@ -1,5 +1,11 @@
 # AVRMakefile.mak
 
+ASRCS	= $(wildcard *.S)
+AOBJS	= $(ASRCS:.S=.o)
+CSRCS	= $(wildcard *.c)
+COBJS	= $(CSRCS:.c=.o)
+OBJS	= $(AOBJS) $(COBJS)
+
 # detect the system we are using
 ifeq ($(OS),Windows_NT)
 	include $(MAKE_BASE)include/AVRMakeWin.mak
