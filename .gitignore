@@ -1,7 +1,14 @@
+# C/Asm
 *.o
+
+# Vim
 *~
 *.swp
+
+# Mac
 .DS_Store
+
+# Arduino
 *.hex
 *.lib
 *.elf

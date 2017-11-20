@@ -5,13 +5,13 @@ TARGET	= cBlink
 INTTBL	= FALSE
 
 # board definition
-#BOARD = UNO
-BOARD = MEGA
+BOARD = UNO
+#BOARD = MEGA
 
 # uncomment one of these linesand check for your system:
 #PORT	= COM3
 #PORT	= /dev/ttyACM0
-#PORT	= /dev/cu.usbmodem1421
+PORT	= /dev/cu.usbmodem1411
 
 # uncomment one of these lines
 MAKE_BASE = ../
